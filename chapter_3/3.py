@@ -6,6 +6,7 @@
 # the last letter of the string is in column 70 of the display.
 
 """>>> right_justify('allen')
+                                                                     allen
 """
 
 print len('allen')
