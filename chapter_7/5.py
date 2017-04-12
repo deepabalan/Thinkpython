@@ -1,17 +1,34 @@
 # estimating value of pi.
 
-
-def fact(k):
-    if k == 0:
-        return 1
-    else:
-        return k * fact(k - 1)
+import math
 
 
-def val_pi(k):
-    res = 0
-    while k <= 1e-15:
-        res = (fact(4 * k) * (1103 + 26390 * k)) / pow((fact(k), 4)) * pow(396, 4 * k)
-    print res
+print 'math.pi\t', '\t\tRamanujan pi', '\tDifference'
 
-print val_pi(1e-23)
+def val_pi():
+    return 1 / math.pi
+
+print val_pi(),'\t',
+
+
+def rama_pi():
+    constant = (2 * math.sqrt(2)) / 9801
+    result = 0
+    k = 0
+    while True:
+        num = math.factorial(4 * k) * (1103 + 26390 * k)
+        den = pow(math.factorial(k), 4) * pow(396, 4 * k)
+        div = num / den
+        result = result + constant * div
+        if abs(div < 1e15):
+            break
+        k += 1
+    return result
+
+print '\t', rama_pi(),
+
+
+def diff(f1, f2):
+    return f2() - f1()
+
+print '\t', diff(rama_pi, val_pi)
