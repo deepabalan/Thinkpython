@@ -5,10 +5,11 @@ import math
 
 print 'math.pi\t', '\t\tRamanujan pi', '\tDifference'
 
+
 def val_pi():
     return 1 / math.pi
 
-print val_pi(),'\t',
+print val_pi(), '\t',
 
 
 def rama_pi():
