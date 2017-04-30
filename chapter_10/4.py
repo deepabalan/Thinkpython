@@ -4,10 +4,13 @@
 
 
 def middle(t):
-    t.pop(0)
-    t.pop(-1)
-    return t
+#    t.pop(0)
+#    t.pop(-1)
+    return t[1:len(t)-1]
 
-print middle([1, 2, 3, 4, 5, 6, 7, 8])
-print middle(['a', 'l', 'm', 'i', 'g', 'h', 't', 'y'])
-print middle(['d', 'e', 'e', 'p', 'a'])
+
+new_list = ['c', 'python', 'java', 'julia', 'algol']
+
+print middle(new_list)
+
+print new_list

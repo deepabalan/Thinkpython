@@ -8,3 +8,4 @@ def chop(t):
     return t
 
 print chop([1, 2, 3, 4])
+print chop(['a', 'b', 'c', 'd', 'e'])
