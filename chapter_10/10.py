@@ -5,32 +5,41 @@
 
 
 import time
+# import dis
+
+def wordlist1(f):
+    t = []
+    filename = open(f)
+    for line in filename:
+        s = line.strip()
+        t.append(s)
+    return t
+
+
+def wordlist2(f):
+    t = []
+    filename = open(f)
+    for line in filename:
+        s = line.strip()
+        t = t + [s]
+    return t
 
 t1 = time.time()
+wordlist1('wordslist.txt')
+remain_t1 = time.time() - t1
+print t1, remain_t1
 
-
-def wordlist(f):
-    t = []
-    filename = open(f).readlines()
-    for line in filename:
-        t.append(line)
-    return t
 t2 = time.time()
-t = t2 - t1
-print wordlist('words.txt')
-print t
+wordlist2('wordslist.txt')
+remain_t2 = time.time() - t2
+print t2, remain_t2
 
+if remain_t1 > remain_t2:
+    print 'append takes longer'
+elif remain_t1 < remain_t2:
+    print 'append is faster'
+else:
+    print 'both equal'
 
-s1 = time.time()
-
-
-def idiom(f):
-    t = []
-    filename = open(f).readlines()
-    for line in filename:
-        t = t + [line]
-    return t
-s2 = time.time()
-s = s2 - s1
-print idiom('words.txt')
-print s
+# print dis.dis(wordlist1)
+# print dis.dis(wordlist2)
