@@ -10,6 +10,9 @@ def read_word(filename):
     for word in f:
         s = word.strip()
         t[s] = ' '
-    print 'abacus' in t
+    return t
 
-read_word('wordslist.txt')
+a = read_word('wordslist.txt')
+print a
+print 'expands' in a
+print 'deepa' in a
