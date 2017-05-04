@@ -8,12 +8,14 @@ def histogram(s):
         t[c] = t.get(c, 0) + 1
     return t
 
+
 def invert_dict(d):
     inverse = {}
     for key in d:
         value = d[key]
         inverse.setdefault(value, []).append(key)
     return inverse
+
 
 def proceed():
     h = histogram(raw_input('Enter a string: '))
